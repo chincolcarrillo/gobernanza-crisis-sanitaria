@@ -1,4 +1,5 @@
 ---
+title: "Gobernanza en Crisis Sanitaria: Un análisis sobre la legitimidad de las medidas sanitarias adoptadas por el Gobierno de Chile"
 output: html_document
 csl: 'input/bib/apa.csl'
 bibliography: 'input/bib/Bib_Informe_EM.bib'
@@ -23,7 +24,6 @@ options(scipen=999)
 load("input/data/proc/proc_movid.RData")
 ```
 
-# Gobernanza en Crisis Sanitaria: Un análisis sobre la legitimidad de las medidas sanitarias adoptadas por el Gobierno de Chile
 ### Investigación realizada en el marco del curso Estadística Multivariada, dictado por Juan Carlos Castillo en el Departamento de Sociología de la Universidad de Chile 
 #### Vicente Campos Aparicio, Carolina Carrillo Devia, Javier González Ortiz, Matías Martini Serrano y Maru Meléndez Berndt  
 #### 06/07/2021

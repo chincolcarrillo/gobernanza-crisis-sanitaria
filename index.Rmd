@@ -1,17 +1,31 @@
 ---
-title: "o"
-subtitle: 
+title: "Publicación Web"
+subtitle: "Gobernanza en Crisis Sanitaria: Un análisis sobre la legitimidad de las medidas sanitarias adoptadas por el Gobierno de Chile"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+Por Carolina Carrillo Devia, Javier González, Matías Martini, Maru Meléndez y Vicente Campos.
 
-pagina de inicio
+Investigación realizada en el marco del curso _Estadística Multivariada_, dictado por Juan Carlos Castillo en el Departamento de Sociología de la Universidad de Chile. Para más información contactar al equipo de investigación.
 
 <br>
 
-<span style="color:gray">Este sitio fue generado por Jekyll en GitHub Pages, a partir de archivos R Markdown. Más información sobre R Markdown Websites [aquí](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html).<span>
+#### En este sitio podrás encontrar:
 
-<span style="color:gray">Última modificación: Diciembre 02, 2021.<span>
+* Informe preliminar en HTML
+* Acceso a la página web de MOVID-Impact
+* Contacto vía correo electrónico con el equipo de investigación
+* Repositorio del proyecto en Open Science Framework
+* Repositorio en GitHub para reproducibilidad del estudio, según protocolo IPO
+
+<br>
+
+#### ¿Cómo citar?
+
+Te recomendamos citar nuestro proyecto en Open Science Framework, ligado al siguiente identificador de objeto digital: https://doi.org/10.17605/OSF.IO/E57GP
+
+<br>
+
+<font size="2"><span style="color:grey">Este sitio fue generado por Jekyll en GitHub Pages, a partir de archivos R Markdown. Más información sobre R Markdown Websites [aquí](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html).<span></font>
+
+<font size="2"><span style="color:grey">Última modificación: Diciembre 02, 2021.<span></font>
