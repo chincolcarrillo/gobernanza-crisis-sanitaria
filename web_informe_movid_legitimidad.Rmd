@@ -25,8 +25,8 @@ load("input/data/proc/proc_movid.RData")
 ```
 
 ### Investigación realizada en el marco del curso Estadística Multivariada, dictado por Juan Carlos Castillo en el Departamento de Sociología de la Universidad de Chile 
-#### Vicente Campos Aparicio, Carolina Carrillo Devia, Javier González Ortiz, Matías Martini Serrano y Maru Meléndez Berndt  
-#### 06/07/2021
+#### Carolina Carrillo Devia, Javier González Ortiz, Matías Martini Serrano, Maru Meléndez Berndt y Vicente Campos Aparicio 
+#### 06 / 07 / 2021
 
 ## Resumen {-}
 Frente al problema público de la influencia de la participación social en la aplicación de políticas sanitarias, y la importancia de la cooperación ciudadana particularmente en la pandemia de COVID-19 [@world_health_organization_covid-19_2020], se busca explicar el grado de acuerdo de los sujetos con las medidas sanitarias adoptadas por el Gobierno a través de la aplicación de modelos de regresión múltiple. En este sentido, se propone determinar el efecto de la constancia en la información sobre el avance del COVID-19, la percepción de desigualdad frente a la pandemia y la percepción de peligro ante el COVID-19, en el grado de legitimidad que los sujetos le adjudican a las medidas sanitarias adoptadas por el Gobierno. 
