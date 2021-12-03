@@ -1,0 +1,17 @@
+---
+title: "o"
+subtitle: 
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+pagina de inicio
+
+<br>
+
+<span style="color:gray">Este sitio fue generado por Jekyll en GitHub Pages, a partir de archivos R Markdown. Más información sobre R Markdown Websites [aquí](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html).<span>
+
+<span style="color:gray">Última modificación: Diciembre 02, 2021.<span>

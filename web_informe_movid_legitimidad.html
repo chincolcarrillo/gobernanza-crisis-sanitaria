@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>web_informe_movid_legitimidad.knit</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Gobernanza en Crisis Sanitaria</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="web_informe_movid_legitimidad.html">Informe preliminar</a>
+</li>
+<li>
+  <a href="https://movid-impact.netlify.app/">Más sobre los datos</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="mailto:carolina.carrillo@ug.uchile.cl">
+    <span class="fas fa-envelope"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://osf.io/e57gp/">
+    <span class="fas fa-archive"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/chincolcarrillo/inv_movid_legitimidad">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="gobernanza-en-crisis-sanitaria-un-análisis-sobre-la-legitimidad-de-las-medidas-sanitarias-adoptadas-por-el-gobierno-de-chile" class="section level1">
+<h1>Gobernanza en Crisis Sanitaria: Un análisis sobre la legitimidad de las medidas sanitarias adoptadas por el Gobierno de Chile</h1>
+<div id="investigación-realizada-en-el-marco-del-curso-estadística-multivariada-dictado-por-juan-carlos-castillo-en-el-departamento-de-sociología-de-la-universidad-de-chile" class="section level3">
+<h3>Investigación realizada en el marco del curso Estadística Multivariada, dictado por Juan Carlos Castillo en el Departamento de Sociología de la Universidad de Chile</h3>
+<div id="vicente-campos-aparicio-carolina-carrillo-devia-javier-gonzález-ortiz-matías-martini-serrano-y-maru-meléndez-berndt" class="section level4">
+<h4>Vicente Campos Aparicio, Carolina Carrillo Devia, Javier González Ortiz, Matías Martini Serrano y Maru Meléndez Berndt</h4>
+</div>
+<div id="section" class="section level4">
+<h4>06/07/2021</h4>
+</div>
+</div>
+<div id="resumen" class="section level2 unnumbered">
+<h2>Resumen</h2>
+<p>Frente al problema público de la influencia de la participación social en la aplicación de políticas sanitarias, y la importancia de la cooperación ciudadana particularmente en la pandemia de COVID-19 <span class="citation">(World Health Organization, 2020)</span>, se busca explicar el grado de acuerdo de los sujetos con las medidas sanitarias adoptadas por el Gobierno a través de la aplicación de modelos de regresión múltiple. En este sentido, se propone determinar el efecto de la constancia en la información sobre el avance del COVID-19, la percepción de desigualdad frente a la pandemia y la percepción de peligro ante el COVID-19, en el grado de legitimidad que los sujetos le adjudican a las medidas sanitarias adoptadas por el Gobierno. Para ello se utilizan los datos de la encuesta transversal a hogares MOVID-Impact, realizada por el Centro UC de Encuestas y Estudios Longitudinales por encargo del proyecto académico CoV-IMPACT-C, liderado por la Universidad de Chile. La base de datos cuenta con 1216 casos tras el tratamiento de casos perdidos. Los resultados a partir de modelos de regresión logística, dan cuenta de que las personas que perciben algún nivel de riesgo ante el coronavirus legitimarían en mayor grado las medidas sanitarias adoptadas por el Gobierno, que aquellas personas que estiman como “Nada peligroso” la enfermedad provocada por el COVID-19. En cuanto a las hipótesis sobre el efecto en la variable dependiente de la constancia en la información sobre el avance del COVID-19 y la percepción de desigualdad frente a la pandemia, los resultados no son estadísticamente significativos.</p>
+</div>
+<div id="introducción" class="section level2">
+<h2>Introducción</h2>
+<p>La pandemia de COVID-19 ha puesto de manifiesto la fragilidad de los servicios de salud y los sistemas de salud pública en todo el mundo. Distintos gobiernos han debido tomar medidas sanitarias extraordinarias, y en Chile se ha optado por la implementación de cuarentenas parciales y totales, entre otras medidas. En este contexto, la OMS señala la importancia de la colaboración de las personas para un funcionamiento eficaz de las medidas sanitarias adoptadas <span class="citation">(World Health Organization, 2020)</span>. El desconocimiento respecto a esta pandemia dejó en evidencia que, en un comienzo, en realidad ningún gobierno sabía realmente cuál era la forma más óptima de enfrentar esta crisis sanitaria. Hoy en día contamos con evidencia empírica de distintos países que lograron enfrentar efectivamente la propagación de la pandemia como son los casos de China y Noruega. La principal lección aprendida del caso noruego es que, a pesar de la falta de preparación en algunos aspectos, el gobierno logró controlar la pandemia con bastante rapidez y eficacia bajo un estilo de toma de decisiones colaborativa, una estrategia de comunicación efectiva, muchos recursos y un alto nivel de confianza de los ciudadanos con el gobierno <span class="citation">(Christensen &amp; Ma, 2021)</span>. De la misma forma, para el caso de China, el desempeño de la gestión de crisis durante los procesos de manejo de virus está relacionado con la relación dinámica entre la capacidad de gobernanza, para coordinar, analizar, regular y entregar, y la legitimidad del gobierno <span class="citation">(Christensen &amp; Lægreid, 2020)</span>. En este ámbito, la principal enseñanza que muestran ambos casos resalta que la legitimidad de gobernanza de las instituciones desde las cuales emanan dichas medidas sanitarias posee gran relevancia, pues esta constituye un factor fundamental en las expectativas y apoyo hacia la gestión llevada a cabo por las autoridades. Una muestra de ello es que las nuevas normas sobre medidas de lockdown, uso de implementos de protección y herramientas de trazabilidad que dependen de la participación voluntaria de las personas han sido más fáciles de implementar en contextos de mayor confianza en las instituciones y las políticas <span class="citation">(OECD, 2015, p. @linn_fleischer_why_2020)</span>. La estrategia de comunicación que se ha usado en Chile se denominó bajo el programa “Paso a Paso”, para el cual diariamente mediante conferencias de prensa y las redes sociales del Ministerio de Salud, se comunica el reporte de la situación del país mediante voceros del mismo ministerio.</p>
+<p>El término de legitimidad de la gobernanza se relaciona con el grado de apoyo cultural a una organización <span class="citation">(Christensen &amp; Ma, 2021)</span>, en nuestro caso a la gestión de crisis. Esta se ocupa principalmente de la relación entre el gobierno y los ciudadanos, entendiéndose como la percepción de les ciudadanes de si las acciones de las autoridades se consideran apropiadas dentro de ciertos sistemas de normas, creencias y valores construidos social y culturalmente. Una forma de abordar el tema de la legitimidad gubernamental la conceptualiza a partir de tres dimensiones: input, throughput y output legitimacy (Scharpf, 1999; Schmidt, 2013, citado en Christensen, T., y Ma, L., 2021). La <em>legitimacy input</em> refleja el grado en que los ciudadanos apoyan los procesos políticos y los partidos, así como cómo ven la calidad de su propia participación. La <em>legitimacy throughput</em> se ocupa de los procesos dentro del aparato gubernamental y de cuán abiertos, justos e imparciales se ven. Dentro de este apartado se manifiesta la confianza como un elemento fundamental en el desarrollo de políticas públicas en tiempos de pandemia <span class="citation">(Stuti Khemani, 2020)</span>. La <em>legitimacy output</em> se ocupa de las políticas, los medios, las medidas y el desempeño que surgen del aparato público y se dirigen hacia la sociedad, y cómo son percibidos por los ciudadanos.</p>
+<p>En virtud de este esquema, resulta de sumo interés analizar el efecto que algunos factores, correspondientes a las tres dimensiones de legitimidad mencionadas, tienen con la legitimidad global respecto a las medidas sanitarias gubernamentales. En primer lugar, relacionar la fatiga en la información sobre los avances del coronavirus, respecto al grado de legitimidad que se tiene sobre las medidas sanitarias del gobierno, considerando que la valoración positiva de la participación en los procesos políticos ( <em>input legitimacy</em> ) está relacionada con el acceso oportuno de la población a la información contingente. En segundo lugar, se propone analizar los efectos de la percepción de desigualdad en la protección y el acceso a servicios de salud en tiempos de pandemia en Chile respecto al grado de legitimidad que se tiene sobre las medidas sanitarias del gobierno. Esto bajo la lógica de que esta percepción de desigualdad se vincula con la <em>throughout legitimacy</em> en términos de confianza en los procesos del aparato gubernamental. En tercer lugar, es de interés analizar el efecto de la percepción de riesgo que las personas tienen sobre el COVID-19 respecto al grado de legitimidad que le adjudican a las medidas sanitarias del gobierno. Esto último se relaciona con la dimensión de <em>output legitimacy</em>, en tanto permite evaluar el impacto de las estrategias del gobierno en la dimensión subjetiva del riesgo percibido.</p>
+<div class="figure">
+<img src="input/images/legitimacy_model.png" alt="" />
+<p class="caption"><br> Modelo de <em>input-throughput-output legitimacy</em> aplicado a la Gobernanza en Crisis Sanitaria. Fuente: Elaboración propia.</p>
+</div>
+<p>En adición a lo anteriormente presentado, el impacto del sexo y la edad en las consecuencias sociales y económicas de la Pandemia también ha sido ampliamente estudiado. Estudios señalan que los efectos en el trabajo remunerado y en las labores reproductivas han sido mayores para las mujeres <span class="citation">(Blanca Bórquez, 2021)</span>, así como las medidas sanitarias más estrictas han aumentado la violencia de género en sus distintas manifestaciones <span class="citation">(Moreno-Estupiñán, 2020)</span>. Asimismo, el riesgo a la salud que implica el COVID-19 aumenta en las personas mayores <span class="citation">(Romero Starke et al., 2020)</span>, mientras que la caída en la ocupación laboral ha sido mayor en las personas más jóvenes, lo que podría influir en una percepción diferenciada de los efectos de las medidas sanitarias por grupo etario.</p>
+</div>
+<div id="objetivos-e-hipótesis" class="section level2">
+<h2>Objetivos e hipótesis</h2>
+<p>El objetivo general que guía la investigación es analizar el efecto de la fatiga en la información sobre el avance del COVID-19, la percepción de desigualdad en el sistema de salud frente a la Pandemia y la percepción de riesgo ante el COVID-19, en la legitimidad de las medidas sanitarias gubernamentales.</p>
+<p>Se proponen las siguientes hipótesis:</p>
+<ul>
+<li><span class="math inline">\(H_1\)</span>: Manteniendo el resto de las variables constantes, mientras más fatiga perciba una persona respecto a su información sobre los avances del coronavirus y sus efectos, menor será el grado de acuerdo con las medidas sanitarias adoptadas por el Gobierno.</li>
+<li><span class="math inline">\(H_2\)</span>: Ceteris paribus, las personas que perciben menores grados de desigualdad en el acceso a protección y salud frente a la pandemia estarán más de acuerdo con las medidas sanitarias adoptadas por el Gobierno.</li>
+<li><span class="math inline">\(H_3\)</span>: Las personas que estiman un bajo nivel de riesgo ante el coronavirus estarán más de acuerdo con las medidas sanitarias adoptadas por el Gobierno, que aquellas personas que estiman un alto nivel de riesgo.</li>
+</ul>
+</div>
+<div id="metodología" class="section level2">
+<h2>Metodología</h2>
+<p>El presente informe trabajó con la base de datos MOVID-IMPACT, que está hecha a partir de la encuesta Movid-Impact producida por el equipo CoV-IMPACT (ANID N°960). Esta encuesta busca dar cuenta de una evaluación transdisciplinaria de las respuestas a la pandemia del COVID-19 y sus consecuencias. La base cuenta con un total de 3569 casos y 168 variables para poder responder a las múltiples dimensiones de la crisis económica y social provocada por la pandemia. Al tomar en cuenta la información de les 1261 encuestades que respondieron a la encuesta, eliminando los casos perdidos respecto a las variables elegidas, se trabajó con un total de 1216 casos.</p>
+<p>Para este informe se hizo uso de la siguiente variable dependiente para los modelos de regresión logística:</p>
+<ul>
+<li>Legitimidad de las medidas sanitarias: Refiere al grado de legitimidad de las medidas sanitarias propuestas por las autoridades sanitarias expresada como variable dicotómica. Fue construida a partir del ítem del cuestionario: “Aunque a veces no estemos de acuerdo con las autoridades sanitarias y las medidas que se proponen, es nuestro deber seguir sus indicaciones al pie de la letra”. En esta variable se agruparon las categorías de “Muy en desacuerdo”, “En desacuerdo” e “Indiferente” en el valor [0] “No de acuerdo” y las categorías en el “De acuerdo” y “Muy de acuerdo” en el valor [1] “De acuerdo”.</li>
+</ul>
+<p>Como variables predictoras para los modelos de regresión se consideró:</p>
+<ul>
+<li>Fatiga en la información sobre el avance del COVID-19: Construida en base a la afirmación “Me informo constantemente sobre los avances del coronavirus y sus efectos en Chile.”. Esta variable incluye cinco categorías, considerando como casos perdidos a las categorías “no sabe” y “no responde”. El valor [1] corresponde a “Muy en desacuerdo”, el valor [2] “En desacuerdo”, el valor [3] “Indiferente”, el valor [4] “De acuerdo”, el valor [5] “Muy de acuerdo”.</li>
+<li>Percepción de desigualdad en el sistema de salud frente a la Pandemia: Esta variable refiere a la percepción que tienen les encuestades sobre la desigualdad en el acceso a protección y salud frente a la pandemia. Fue construida en base a la afirmación “En Chile hay enormes desigualdades frente a la pandemia: algunas personas están mucho más protegidas y tienen mucho mejor acceso a salud que otras”. Esta variable incluye cinco categorías, considerando como casos perdidos a las categorías “no sabe” y “no responde”. El valor [1] corresponde a “Muy en desacuerdo”, el valor [2] “En desacuerdo”, el valor [3] “Indiferente”, el valor [4] “De acuerdo”, el valor [5] “Muy de acuerdo”.</li>
+<li>Percepción de riesgo ante el COVID-19: Esta variable refiere a la percepción de riesgo de les encuestades ante el COVID-19. Esta variable incluye cinco categorías, considerando como casos perdidos a las categorías “no sabe” y “no responde”. El valor [1] que es “Nada peligroso”, el valor [2] “Algo peligroso”, el valor [3] “Bastante peligroso”, el valor [4] “Muy peligroso” y el valor [5] “Extremadamente peligroso”. La categoría “Nada peligroso” [1] fue elegida como categoría de referencia en este caso.</li>
+</ul>
+<p>Como variables de control:</p>
+<ul>
+<li>Sexo: Esta variable da cuenta del sexo de la persona bajo las dos opciones “Hombre” [0] y “Mujer” [1]. Se usará de referencia la categoría de “Hombre” [0].</li>
+<li>Edad: Esta variable da cuenta de la edad del entrevistado en años.</li>
+</ul>
+</div>
+<div id="análisis" class="section level2">
+<h2>Análisis</h2>
+<div id="análisis-descriptivo" class="section level3">
+<h3>Análisis descriptivo</h3>
+<p><img src="input/images/tabla_1.png" /><!-- --></p>
+<p>En la Tabla 1 se pueden observar los estadísticos descriptivos principales de cada una de las variables a utilizar. En primer lugar, la mayor parte de la muestra se posiciona en grados de mayor legitimidad de las medidas sanitarias adoptadas por las autoridades sanitarias, pues la variable presenta un 87.7% de la muestra concentrada en “De acuerdo”.</p>
+<p>Igualmente, respecto a la variable <em>Fatiga en la información sobre el avance del COVID-19</em>, conviene señalar que la mayor parte de la muestra se concentra en las categorías de “De acuerdo” (63.2%) y “Muy de acuerdo” (20.0%). Una distribución similar de los datos se puede observar en la variable percepción de desigualdad frente a la Pandemia, con un 50.7% en la categoría “De acuerdo” y un 32.4% en “Muy de acuerdo”.</p>
+<p>En tercer lugar, en cuanto a la variable <em>Percepción de riesgo ante el COVID-19</em>, existe una alta dispersión en cuanto a sus resultados, pero que se concentra en las categorías de peligro más altas. La categoría que concentra la mayor cantidad de los resultados corresponde a aquellas que perciben el COVID-19 como “Muy peligroso” (35.1%). A esta categoría le siguen las de “Extremadamente peligroso” (32.1%) y “Bastante peligroso” (21.0%). En menor medida se encuentran las categorías “Algo peligroso” (10.5%) y “Nada peligroso” (1.4%).</p>
+</div>
+<div id="análisis-de-regresión" class="section level3">
+<h3>Análisis de regresión</h3>
+<p>En la siguiente tabla de modelos de regresión logística se pueden visualizar el modelo nulo (Modelo 0), el modelo controlado por sexo y edad (Modelo 1), un modelo parcial (Modelo 5) y el modelo completo (Modelo 8). El modelo nulo solo toma en cuenta la variable dependiente y no considera ninguna variable predictiva. Mientras que el Modelo 1, contempla las variables control de este estudio, seleccionadas según su pertinencia teórica. En tanto, el Modelo 5 y el Modelo 8 fueron seleccionados por ser los modelos con mejor ajuste tras comparar los estadísticos de ajuste (Pseudo R2 de McFadden, Test de Razón de Verosimilitud y Criterio de Información de Akaike) entre los modelos progresivos (ver Anexo).</p>
+<table class="texreg" style="margin: 10px;border-collapse: collapse;border-spacing: 0px;color: #000000;border-top: 2px solid #000000;">
+<caption>
+<strong>Tabla 2.</strong> <br> <em>Modelos de regresión logística (selección)</em>
+</caption>
+<thead>
+<tr>
+<th style="padding-left: 5px;padding-right: 5px;">
+ 
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 0
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 1
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+OR
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 5
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+OR
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 8
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+OR
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">
+Intercepto
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.97<sup>***</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.20<sup>***</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+9.01<sup>***</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.43
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.53
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.58
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.78
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.09)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.28)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.28)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.73)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.73)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.90)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.90)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Sexo (Mujer=1)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.16
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.18
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.12
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.12
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.10
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.11
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Edad
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.99
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.99
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.99
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.00)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.00)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.01)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.01)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.01)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.01)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Riesgo: Algo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.63
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.88
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.63
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.88
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.59)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.59)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Riesgo: Bastante
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.32<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+3.75<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.26<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+3.51<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Riesgo: Mucho
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.84
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.32
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.77
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.17
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.54)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.54)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.56)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.56)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Riesgo: Extremadamente
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.28<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+3.59<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.21<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+3.36<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.55)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.55)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Desigualdad: En desacuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.99
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.69
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.02
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.77
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.52)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.52)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.52)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.52)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Desigualdad: Indiferente
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.13
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.88
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.05
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.95
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Desigualdad: De acuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.90<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.46<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.90
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.46
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.46)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.46)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.46)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.46)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Desigualdad: Muy de acuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.02<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.79<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.07<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.91<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.47)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.47)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.47)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.47)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Información: En desacuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.20
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.82
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.71)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.71)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Información: Indiferente
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.53
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.59
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.71)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.71)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Información: De acuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.00
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.66)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.66)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Información: Muy de acuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.19
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.82
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.68)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.68)
+</td>
+</tr>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">
+Deviance Test (<span class="math inline">\(p\)</span>)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.25
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.25
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.01
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Pseudo R2
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.00
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.00
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.00
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.03
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.03
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.03
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.03
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+AIC
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+906.56
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+907.82
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+907.82
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+901.54
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+901.54
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+906.36
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+906.36
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+BIC
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+911.66
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+923.13
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+923.13
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+957.68
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+957.68
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+982.91
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+982.91
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Log Likelihood
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-452.28
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-450.91
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-450.91
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-439.77
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-439.77
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-438.18
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-438.18
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Deviance
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+904.56
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+901.82
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+901.82
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+879.54
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+879.54
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+876.36
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+876.36
+</td>
+</tr>
+<tr style="border-bottom: 2px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">
+Num. obs.
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="font-size: 0.8em;" colspan="8">
+<sup>***</sup>p &lt; 0.001; <sup>**</sup>p &lt; 0.01; <sup>*</sup>p &lt; 0.05
+</td>
+</tr>
+</tfoot>
+</table>
+<p>Si bien se debe señalar que tanto el Modelo 5 como el Modelo 8 tienen un mejor ajuste que el modelo nulo, y esta diferencia es significativa ( <em>p</em> del test de razón de verosimilitud &lt; 0.05), el ajuste global de estos modelos es muy bajo (Pseudo R2 = 0.03).</p>
+<p>Por otro lado, se puede observar que en el caso de la variable <em>percepción de desigualdad en el sistema de salud frente a la Pandemia</em>, el modelo completo señala que los Odds-ratio de la categoría <em>muy de acuerdo</em> son estadísticamente significativos con un p &lt; 0.05. Respecto a este resultado, se interpreta que aquellas personas que están muy de acuerdo con la existencia de desigualdad en el sistema de salud frente a la Pandemia tienen una probabilidad 2.91 veces mayor de considerar que las medidas sanitarias adoptadas por el gobierno son legítimas, que las personas que están muy en desacuerdo con dicha afirmación. Este efecto lleva a rechazar la segunda hipótesis propuesta en este estudio. De igual forma, los resultados estadísticamente significativos en el modelo completo respecto a la variable de <em>percepción de riesgo ante el COVID-19</em> llevan a rechazar la tercera hipótesis del estudio</p>
+</div>
+</div>
+<div id="discusión" class="section level2">
+<h2>Discusión</h2>
+<p>El objetivo general de esta investigación es analizar el efecto de la fatiga en la información sobre el avance del COVID-19, la percepción de desigualdad en el sistema de salud frente a la Pandemia y la percepción de riesgo ante el COVID-19, en la legitimidad de las medidas sanitarias gubernamentales. Considerando esto, se puede afirmar que a partir de los resultados presentados a lo largo del informe, no se puede concluir que ninguna de las tres hipótesis planteadas se cumple de manera estadísticamente significativa. Respecto a la primera hipótesis, que a más fatiga perciba una persona respecto a su información sobre los avances del coronavirus y sus efectos, menor será el grado de acuerdo con las medidas sanitarias adoptadas por el Gobierno; considerando que las diferencias de ajuste entre el Modelo 5 y el Modelo 8 no son significativas, se concluye que la variable de fatiga en la información sobre el avance del COVID-19 no tiene efectos sustanciales en la legitimidad de las medidas sanitarias gubernamentales. En cuanto a las variables de percepción de desigualdad en el sistema de salud frente a la Pandemia y la percepción de riesgo ante el COVID-19, se pudieron identificar efectos significativos con un 95% de confianza en el modelo, señalando un efecto positivo sobre la legitimidad de las medias sanitarias tomadas por el gobierno. En esta línea, se rechanzan la segunda y tercera hipótesis de este estudio. A pesar de lo anterior, se considera que este hallazgo no aporta a una mejor comprensión del fenómeno de la legitimidad de las medidas sanitarias ni de la gobernanza en tiempos de crisis sanitaria, ya que el mejor modelo de regresión logística estimado apenas tiene un ajuste del 3% (Pseudo R2 = 0.03).</p>
+<p>A partir de estos resultados, es posible plantear la idea de que, la alta concentración de personas que perciben un alto grado de riesgo ante el Coronavirus y su relación con la aceptación con las medidas del gobierno puede ser interpretado como que el gobierno ha cumplido en esta dimensión de salida su rol de dirigir y hacer llegar los riesgos del COVID-19 hacia la población. En este sentido, la variable puede responder a un constructo diferente al propuesto en esta investigación, y se propone explorar esta arista sobre la comunicación de riesgo en el futuo. Ahora bien, la elaboración de este esquema nos invita a incorporar nuevas variables para estudios futuros. Así, sería de sumo interés, por ejemplo, indagar más respecto a variables que vinculen las legitimacy throughput para así evidenciar que factores institucionales influyen en la confianza y la imparcialidad dentro de la legitimidad del gobierno. Además, los antecedentes de los países que pudieron afrontar de mejor manera esta pandemia, destacan de igual forma la importancia del manejo de los recursos por parte del gobierno, para lo cual resultaría pertinente vincular la legitimidad del gobierno con variables socioeconómicas. Durante las épocas más críticas de la pandemia, desde el gobierno se impulsaron políticas de apoyo económico a través de caja de mercadería, lo cual no fue de total agrado por parte de la población y podría ser un factor a vincular con respecto a la legitimidad del gobierno.</p>
+</div>
+<div id="referencias" class="section level2">
+<h2>Referencias</h2>
+<div id="refs">
+<div id="ref-blanca_borquez_organizacion_2021">
+<p>Blanca Bórquez (Ed.). (2021). Organización social de los cuidados y crisis de la pandemia en Chile. In <em>MUJERES en tiempos de esperanza, crisis y pandemia</em> (pp. 89–97). Biblioteca del Congreso Nacional. <a href="https://www.bcn.cl/publicaciones/obtienearchivo?id=documentos/10221.1/82517/2/278385.pdf">https://www.bcn.cl/publicaciones/obtienearchivo?id=documentos/10221.1/82517/2/278385.pdf</a></p>
+</div>
+<div id="ref-christensen_balancing_2020">
+<p>Christensen, T., &amp; Lægreid, P. (2020). Balancing governance capacity and legitimacy ‐ how the Norwegian government handled the COVID‐19 crisis as a high performer. <em>Public Administration Review</em>, 10.1111/puar.13241. <a href="https://doi.org/10.1111/puar.13241">https://doi.org/10.1111/puar.13241</a></p>
+</div>
+<div id="ref-christensen_comparing_2021">
+<p>Christensen, T., &amp; Ma, L. (2021). Comparing SARS and COVID-19: Challenges of Governance Capacity and Legitimacy. <em>Public Organization Review</em>, 1–17. <a href="https://doi.org/10.1007/s11115-021-00510-y">https://doi.org/10.1007/s11115-021-00510-y</a></p>
+</div>
+<div id="ref-linn_fleischer_why_2020">
+<p>Linn Fleischer. (2020). Why produce statistics on trust in time of COVID-19? In <em>Governance Statistics in the COVID-19 Era</em> (pp. 54–57). <a href="https://www.ohchr.org/Documents/Issues/HRIndicators/GovernanceStatisticsCOVID-19Era.pdf">https://www.ohchr.org/Documents/Issues/HRIndicators/GovernanceStatisticsCOVID-19Era.pdf</a></p>
+</div>
+<div id="ref-moreno-estupinan_violencia_2020">
+<p>Moreno-Estupiñán, D. M.-M. y M. B.-G. y L. A.-E. y A. (2020). Violencia intrafamiliar en el marco de la emergencia sanitaria por el COVID-19. <em>CienciAmérica</em>, <em>9</em>(2), 261–267. <a href="https://doi.org/10.33210/ca.v9i2.316">https://doi.org/10.33210/ca.v9i2.316</a></p>
+</div>
+<div id="ref-oecd_changing_2015">
+<p>OECD. (2015). <em>The Changing Face of Strategic Crisis Management</em>. <a href="https://doi.org/https://doi.org/https://doi.org/10.1787/9789264249127-en">https://doi.org/https://doi.org/https://doi.org/10.1787/9789264249127-en</a></p>
+</div>
+<div id="ref-romero_starke_age-related_2020">
+<p>Romero Starke, K., Petereit-Haack, G., Schubert, M., Kämpf, D., Schliebner, A., Hegewald, J., &amp; Seidler, A. (2020). The Age-Related Risk of Severe Outcomes Due to COVID-19 Infection: A Rapid Review, Meta-Analysis, and Meta-Regression. <em>International Journal of Environmental Research and Public Health</em>, <em>17</em>(16), 5974. <a href="https://doi.org/10.3390/ijerph17165974">https://doi.org/10.3390/ijerph17165974</a></p>
+</div>
+<div id="ref-khemani_opportunity_2020">
+<p>Stuti Khemani. (2020). <em>An Opportunity to Build Legitimacy and Trust in Public Institutions in the Time of COVID-19</em>. World Bank. <a href="http://hdl.handle.net/10986/33715">http://hdl.handle.net/10986/33715</a></p>
+</div>
+<div id="ref-world_health_organization_covid-19_2020">
+<p>World Health Organization. (2020). <em>COVID-19 Strategic Preparedness and Response Plan Update</em>. <a href="https://www.who.int/publications/m/item/covid-19-strategy-update">https://www.who.int/publications/m/item/covid-19-strategy-update</a></p>
+</div>
+</div>
+</div>
+<div id="anexo" class="section level2">
+<h2>Anexo</h2>
+<div id="anexo-1-estadísticos-descriptivos-de-las-variables-de-control" class="section level4">
+<h4>Anexo 1: Estadísticos descriptivos de las variables de control</h4>
+<table>
+<colgroup>
+<col width="4%" />
+<col width="11%" />
+<col width="24%" />
+<col width="19%" />
+<col width="18%" />
+<col width="10%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">No</th>
+<th align="left">Variable</th>
+<th align="left">Stats / Values</th>
+<th align="left">Freqs (% of Valid)</th>
+<th align="left">Graph</th>
+<th align="left">Valid</th>
+<th align="left">Missing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">sexo [factor]</td>
+<td align="left">1. 0 2. 1</td>
+<td align="left">457 (37.6%) 759 (62.4%)</td>
+<td align="left">IIIIIII IIIIIIIIIIII</td>
+<td align="left">1216 (100.0%)</td>
+<td align="left">0 (0.0%)</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">edad [integer]</td>
+<td align="left">Mean (sd) : 48.4 (18.1) min &lt; med &lt; max: 18 &lt; 48 &lt; 96 IQR (CV) : 30 (0.4)</td>
+<td align="left">75 distinct values</td>
+<td align="left">: . : : : : . . : : : : : : : : : : : : : : : : : : : : : : : :</td>
+<td align="left">1216 (100.0%)</td>
+<td align="left">0 (0.0%)</td>
+</tr>
+</tbody>
+</table>
+<p>El Anexo 1 muestra los estadísticos descriptivos de las variables de control. En primer lugar, la variable Sexo describe que entre las personas entrevistadas, en un 37.6% serían hombres y un 62.4% serían mujeres. Además, la variable Edad señala que las personas entrevistadas rondan entre los 18 y los 96 años y que el promedio de la muestra es de 48 años.</p>
+</div>
+<div id="anexo-2-modelos-de-regresión-logística-no-seleccionados" class="section level3">
+<h3>Anexo 2: Modelos de regresión logística (no seleccionados)</h3>
+<table class="texreg" style="margin: 10px;border-collapse: collapse;border-spacing: 0px;caption-side: bottom;color: #000000;border-top: 2px solid #000000;">
+<thead>
+<tr>
+<th style="padding-left: 5px;padding-right: 5px;">
+ 
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 2
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 3
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 4
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 6
+</th>
+<th style="padding-left: 5px;padding-right: 5px;">
+Modelo 7
+</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">
+Intercepto
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.38<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.35<sup>**</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.02<sup>**</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.52
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.22
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.51)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.68)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.80)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.77)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Sexo (Mujer=1)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.13
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.16
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.16
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.12
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.15
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.18)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Edad
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.01
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.00)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.00)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.00)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.00)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.00)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Riesgo: Algo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.55
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.54
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.59)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Riesgo: Bastante
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.24<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.16<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Riesgo: Mucho
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.73
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.64
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.54)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.56)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Riesgo: Extremadamente
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.17<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.08
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.55)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Desigualdad: En desacuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.99
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.51)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.52)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Desigualdad: Indiferente
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.14
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.07
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.56)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Desigualdad: De acuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.88
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.86
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.45)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.46)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Desigualdad: Muy de acuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.99<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.03<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.46)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.47)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Información: En desacuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.06
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.12
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.04
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.69)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.70)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.71)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Información: Indiferente
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.35
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.53
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.37
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.68)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.69)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.70)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Información: De acuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.32
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.05
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.27
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.64)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.65)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.66)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Información: Muy de acuerdo
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.19
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.11
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.10
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.65)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.67)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.67)
+</td>
+</tr>
+<tr style="border-top: 1px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">
+Deviance Test (<span class="math inline">\(p\)</span>)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.03
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.03
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.25
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.06
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.05
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Pseudo R2
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.02
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.02
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.01
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.02
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.02
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+AIC
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+904.70
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+904.95
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+910.72
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+909.09
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+908.28
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+BIC
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+940.42
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+940.67
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+946.44
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+965.22
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+964.41
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Log Likelihood
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-445.35
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-445.47
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-448.36
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-443.54
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-443.14
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+Deviance
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+890.70
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+890.95
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+896.72
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+887.09
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+886.28
+</td>
+</tr>
+<tr style="border-bottom: 2px solid #000000;">
+<td style="padding-left: 5px;padding-right: 5px;">
+Num. obs.
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1216
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="font-size: 0.8em;" colspan="6">
+<sup>***</sup>p &lt; 0.001; <sup>**</sup>p &lt; 0.01; <sup>*</sup>p &lt; 0.05
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
